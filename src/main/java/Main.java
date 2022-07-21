@@ -15,13 +15,12 @@ public class Main {
             User user = User.builder()
                     .age(20)
                     .birthDay(LocalDate.of(1995,12,12))
-                    .firstname("Ivanov")
+                    .firstname("Vasily")
                     .lastname("Ivan")
                     .username("Ivanov@gmail.com")
                     .build();
-
-            session.persist(user);
-
+            
+            session.merge(user);
             session.getTransaction().commit();
         }
 
